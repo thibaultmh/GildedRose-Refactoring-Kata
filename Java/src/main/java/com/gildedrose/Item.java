@@ -1,5 +1,14 @@
 package com.gildedrose;
 
+/*
+ * TMH:
+ * We can't change anything here according to the specs, but there are several improvements to be made:
+ * - private attributes + getters
+ * - rename 'sellIn' to 'daysToExpire'
+ * - generate a toString that is more informative
+ * - javadoc + unit tests
+ */
+
 public class Item {
 
     public String name;
