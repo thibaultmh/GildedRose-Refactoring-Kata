@@ -21,7 +21,16 @@ public class Ticket extends Item {
 
     @Override
     public void update() {
-        // TODO
+        sellIn--;
+        if (sellIn > 10) {
+            quality++;
+        } else if (sellIn > 5) {
+            quality += 2;
+        } else if (sellIn > 0) {
+            quality += 3;
+        } else {
+            quality = 0;
+        }
     }
 
 }
