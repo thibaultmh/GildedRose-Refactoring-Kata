@@ -21,6 +21,14 @@ public class Conjured extends Item {
 
     @Override
     public void update() {
-        // TODO
+        sellIn--;
+        if (sellIn < 0) {
+            quality -= 4;
+        } else {
+            quality -= 2;
+        }
+        if (quality < 0) {
+            quality = 0;
+        }
     }
 }
