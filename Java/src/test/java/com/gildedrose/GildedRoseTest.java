@@ -15,13 +15,14 @@ public class GildedRoseTest {
             new Item("Expired Item", 0, 7),
             new Item("Expired Item", -1, 7),
             new Item("Junk Item", 5, 0),
+            new Item("Junk Item", -1, 1),
         };
 
         GildedRose app = new GildedRose(items);
         app.updateQuality();
 
         assertThat(app.items, is(not(nullValue())));
-        assertThat(app.items, arrayWithSize(5));
+        assertThat(app.items, arrayWithSize(6));
 
         Item item1 = app.items[0];
         assertThat(item1.name, is("+5 Dexterity Vest"));
@@ -47,6 +48,11 @@ public class GildedRoseTest {
         assertThat(item5.name, is("Junk Item"));
         assertThat(item5.sellIn, is(4));
         assertThat(item5.quality, is(0));
+
+        Item item6 = app.items[5];
+        assertThat(item6.name, is("Junk Item"));
+        assertThat(item6.sellIn, is(-2));
+        assertThat(item6.quality, is(0));
     }
 
     @Test
@@ -191,7 +197,7 @@ public class GildedRoseTest {
         app.updateQuality();
 
         assertThat(app.items, is(not(nullValue())));
-        assertThat(app.items, arrayWithSize(4));
+        assertThat(app.items, arrayWithSize(3));
 
         // I don't know what should happen, but it shouldn't crash at least
     }
