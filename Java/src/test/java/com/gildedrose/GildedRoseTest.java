@@ -203,15 +203,16 @@ public class GildedRoseTest {
     public void testUpdateQuality_StrangeItems() {
         Item[] items = new Item[] {
             new Item("Item", 3, -1), // items do not have negative quality normally
-            new Item("Aged Brie", 2, -1), // items do not have negative quality normally
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, -1), // items do not have negative quality normally
+            new Cheese("Aged Brie", 2, -1), // items do not have negative quality normally
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 5, -1), // items do not have negative quality normally
+            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 60), // items do not have quality >50
         };
 
         GildedRose app = new GildedRose(items);
         app.updateQuality();
 
         assertThat(app.items, is(not(nullValue())));
-        assertThat(app.items, arrayWithSize(3));
+        assertThat(app.items, arrayWithSize(4));
 
         // I don't know what should happen, but it shouldn't crash at least
     }
