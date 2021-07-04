@@ -124,13 +124,13 @@ public class GildedRoseTest {
     @Test
     public void testUpdateQuality_Ticket() {
         Item[] items = new Item[] {
-            new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 3, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", -1, 20),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-            new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 10, 20),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 3, 20),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 0, 20),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", -1, 20),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+            new Ticket("Backstage passes to a TAFKAL80ETC concert", 5, 50),
         };
 
         GildedRose app = new GildedRose(items);
