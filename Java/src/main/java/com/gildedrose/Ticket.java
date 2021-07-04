@@ -31,6 +31,9 @@ public class Ticket extends Item {
         } else {
             quality = 0;
         }
+        if (quality >= 50) {
+            quality = 50;
+        }
     }
 
 }
