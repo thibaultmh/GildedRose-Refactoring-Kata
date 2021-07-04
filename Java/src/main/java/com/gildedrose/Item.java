@@ -6,7 +6,6 @@ package com.gildedrose;
  * - private attributes + getters
  * - rename 'sellIn' to 'daysToExpire'
  * - generate a toString that is more informative
- * - javadoc + unit tests
  */
 
 public class Item {

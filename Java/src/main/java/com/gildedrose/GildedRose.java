@@ -1,6 +1,12 @@
 package com.gildedrose;
 
-class GildedRose {
+/**
+ * GildedRose item management class.
+ *
+ * @author thibaultmh
+ *
+ */
+public class GildedRose {
     /*
      * TMH:
      * According to specs we can't change this.
@@ -9,10 +15,18 @@ class GildedRose {
      */
     Item[] items;
 
+    /**
+     * Constructor.
+     *
+     * @param items array of items
+     */
     public GildedRose(Item[] items) {
         this.items = items;
     }
 
+    /**
+     * Updates the quality and sellIn of every item.
+     */
     public void updateQuality() {
         if (items == null) {
             return;
