@@ -12,7 +12,7 @@ public class GildedRoseTest {
         Item[] items = new Item[] {
             new Item("+5 Dexterity Vest", 10, 20),
             new Item("Elixir of the Mongoose", 5, 7),
-            new Item("Almost Expired Item", 0, 7),
+            new Item("Expired Item", 0, 7),
             new Item("Expired Item", -1, 7),
             new Item("Junk Item", 5, 0),
         };
@@ -34,9 +34,9 @@ public class GildedRoseTest {
         assertThat(item2.quality, is(6));
 
         Item item3 = app.items[2];
-        assertThat(item3.name, is("Almost Expired Item"));
+        assertThat(item3.name, is("Expired Item"));
         assertThat(item3.sellIn, is(-1));
-        assertThat(item3.quality, is(6));
+        assertThat(item3.quality, is(5));
 
         Item item4 = app.items[3];
         assertThat(item4.name, is("Expired Item"));
@@ -73,7 +73,7 @@ public class GildedRoseTest {
         Item item2 = app.items[1];
         assertThat(item2.name, is("Aged Brie"));
         assertThat(item2.sellIn, is(-2));
-        assertThat(item2.quality, is(2));
+        assertThat(item2.quality, is(2)); // TMH: this has to be bug right? The specs mention that an item degrades twice as fast, not appreciate twice as fast
 
         Item item3 = app.items[2];
         assertThat(item3.name, is("Aged Brie"));
@@ -83,7 +83,7 @@ public class GildedRoseTest {
         Item item4 = app.items[3];
         assertThat(item4.name, is("Aged Brie"));
         assertThat(item4.sellIn, is(1));
-        assertThat(item4.quality, is(50));
+        assertThat(item4.quality, is(50)); // TMH: this has to be bug right?
 
         Item item5 = app.items[4];
         assertThat(item5.name, is("Aged Brie"));
@@ -151,7 +151,7 @@ public class GildedRoseTest {
         Item item4 = app.items[3];
         assertThat(item4.name, is("Backstage passes to a TAFKAL80ETC concert"));
         assertThat(item4.sellIn, is(-1));
-        assertThat(item4.quality, is(23));
+        assertThat(item4.quality, is(0));
 
         Item item5 = app.items[4];
         assertThat(item5.name, is("Backstage passes to a TAFKAL80ETC concert"));
