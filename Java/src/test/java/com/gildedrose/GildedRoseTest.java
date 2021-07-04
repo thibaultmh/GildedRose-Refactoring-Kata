@@ -94,8 +94,8 @@ public class GildedRoseTest {
     @Test
     public void testUpdateQuality_Legendary() {
         Item[] items = new Item[] {
-            new Item("Sulfuras, Hand of Ragnaros", 0, 80),
-            new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+            new Legendary("Sulfuras, Hand of Ragnaros", 0),
+            new Legendary("Sulfuras, Hand of Ragnaros", -1),
         };
 
         GildedRose app = new GildedRose(items);
@@ -184,7 +184,6 @@ public class GildedRoseTest {
         Item[] items = new Item[] {
             new Item("Item", 3, -1), // items do not have negative quality normally
             new Item("Aged Brie", 2, -1), // items do not have negative quality normally
-            new Item("Sulfuras, Hand of Ragnaros", -1, 60), // legendary items have quality 80 normally
             new Item("Backstage passes to a TAFKAL80ETC concert", 5, -1), // items do not have negative quality normally
         };
 
