@@ -185,7 +185,7 @@ public class GildedRoseTest {
             new Item("Item", 3, -1), // items do not have negative quality normally
             new Item("Aged Brie", 2, -1), // items do not have negative quality normally
             new Item("Sulfuras, Hand of Ragnaros", -1, 60), // legendary items have quality 80 normally
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, -1),
+            new Item("Backstage passes to a TAFKAL80ETC concert", 5, -1), // items do not have negative quality normally
         };
 
         GildedRose app = new GildedRose(items);
