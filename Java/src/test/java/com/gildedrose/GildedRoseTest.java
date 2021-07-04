@@ -83,7 +83,7 @@ public class GildedRoseTest {
         Item item4 = app.items[3];
         assertThat(item4.name, is("Aged Brie"));
         assertThat(item4.sellIn, is(1));
-        assertThat(item4.quality, is(50)); // TMH: this has to be bug right?
+        assertThat(item4.quality, is(50)); // TMH: this has to be bug right? An item can't exceed a quality of 50 except a legendary.
 
         Item item5 = app.items[4];
         assertThat(item5.name, is("Aged Brie"));
@@ -195,6 +195,30 @@ public class GildedRoseTest {
         assertThat(app.items, arrayWithSize(4));
 
         // I don't know what should happen, but it shouldn't crash at least
+    }
+
+    @Test
+    public void testUpdateQuality_NullItems() {
+        GildedRose app = new GildedRose(null);
+
+        app.updateQuality();
+
+        // assert no exception
+    }
+
+    @Test
+    public void testUpdateQuality_NullItem() {
+        Item[] items = new Item[] {
+                new Item("Item", 3, 2),
+                null,
+                new Item("Item", 1, 1),
+        };
+
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        // assert no exception
     }
 
 }
