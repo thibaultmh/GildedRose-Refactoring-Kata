@@ -34,7 +34,16 @@ public class Item {
     public void update() {
         // TMH: we couldn't alter item but I figured adding extra functionality would be OK since it can't break old code. This function is the cleanest solution I think ...
         // TMH: I would make this an interface or abstract method but for backwards compatibility assume this is a normal item
-        // TODO
+        sellIn--;
+        if (quality <= 0) {
+            quality = 0;
+            return; // quality can't degrade below 0
+        }
+        if (sellIn < 0) {
+            quality -= 2;
+        } else {
+            quality--;
+        }
     }
 
     /**
