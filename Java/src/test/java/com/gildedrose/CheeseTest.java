@@ -31,13 +31,17 @@ public class CheeseTest {
 
     @Test
     public void testUpdate_QualityOver50() {
-        Item item = new Cheese("name", 2, 50);
+        Item item1 = new Cheese("name", 2, 50);
+        Item item2 = new Cheese("name", -1, 50);
+        Item item3 = new Cheese("name", -1, 49);
 
-        item.update();
+        item1.update();
+        item2.update();
+        item3.update();
 
-        assertThat(item.getName(), is("name"));
-        assertThat(item.getSellIn(), is(1));
-        assertThat(item.getQuality(), is(50));
+        assertThat(item1.getQuality(), is(50));
+        assertThat(item2.getQuality(), is(50));
+        assertThat(item3.getQuality(), is(50));
     }
 
 }

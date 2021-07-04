@@ -21,7 +21,15 @@ public class Cheese extends Item {
 
     @Override
     public void update() {
-        // TODO
+        sellIn--;
+        if (sellIn < 0) {
+            quality += 2;
+        } else {
+            quality++;
+        }
+        if (quality >= 50) {
+            quality = 50;
+        }
     }
 
 }

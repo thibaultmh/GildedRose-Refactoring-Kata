@@ -73,7 +73,7 @@ public class GildedRoseTest {
         Item item2 = app.items[1];
         assertThat(item2.name, is("Aged Brie"));
         assertThat(item2.sellIn, is(-2));
-        assertThat(item2.quality, is(2)); // TMH: this has to be bug right? The specs mention that an item degrades twice as fast, not appreciate twice as fast
+        assertThat(item2.quality, is(3));
 
         Item item3 = app.items[2];
         assertThat(item3.name, is("Aged Brie"));
