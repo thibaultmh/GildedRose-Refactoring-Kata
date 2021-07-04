@@ -52,11 +52,11 @@ public class GildedRoseTest {
     @Test
     public void testUpdateQuality_Cheese() {
         Item[] items = new Item[] {
-            new Item("Aged Brie", 2, 0),
-            new Item("Aged Brie", -1, 1), // expired
-            new Item("Aged Brie", 2, 50), // high quality
-            new Item("Aged Brie", 2, 51), // strange quality
-            new Item("Aged Brie", -1, 50), // high quality + expired
+            new Cheese("Aged Brie", 2, 0),
+            new Cheese("Aged Brie", -1, 1), // expired
+            new Cheese("Aged Brie", 2, 50), // high quality
+            new Cheese("Aged Brie", 2, 51), // strange quality
+            new Cheese("Aged Brie", -1, 50), // high quality + expired
         };
 
         GildedRose app = new GildedRose(items);
