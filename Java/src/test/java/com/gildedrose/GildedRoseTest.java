@@ -177,12 +177,26 @@ public class GildedRoseTest {
 
     @Test
     public void testUpdateQuality_Conjured() {
-        Item[] items = new Item[] { new Item("Conjured Mana Cake", 3, 6) };
+        Item[] items = new Item[] {
+            new Conjured("Conjured Mana Cake", 3, 6),
+            new Conjured("Conjured Mana Cake", 0, 6)
+        };
 
         GildedRose app = new GildedRose(items);
         app.updateQuality();
 
-        throw new RuntimeException("TODO");
+        assertThat(app.items, is(not(nullValue())));
+        assertThat(app.items, arrayWithSize(2));
+
+        Item item1 = app.items[0];
+        assertThat(item1.name, is("Conjured Mana Cake"));
+        assertThat(item1.sellIn, is(2));
+        assertThat(item1.quality, is(4));
+
+        Item item2 = app.items[1];
+        assertThat(item2.name, is("Conjured Mana Cake"));
+        assertThat(item2.sellIn, is(-1));
+        assertThat(item2.quality, is(2));
     }
 
     @Test
